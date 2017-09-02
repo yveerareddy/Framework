@@ -2,8 +2,6 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:local="clr-namespace:WPFSample"
-        xmlns:controls="clr-namespace:BP.OWB.Framework.Resources.Controls;assembly=BP.OWB.Framework.Assets"
-             xmlns:autobehaviors="clr-namespace:BP.OWB.Framework.Resources.Behaviour;assembly=BP.OWB.Framework.Assets"
         Title="MainWindow" Height="350" Width="525">
 
     <Window.Resources>

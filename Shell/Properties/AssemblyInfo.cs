@@ -8,9 +8,7 @@ using System.Windows;
 [assembly: AssemblyTitle("Shell")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("BP")]
 [assembly: AssemblyProduct("Shell")]
-[assembly: AssemblyCopyright("Copyright © BP 2016")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

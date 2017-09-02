@@ -172,6 +172,76 @@ namespace LinqSamples
             
         }
 
+        public static void GroupByEx4()
+        {
+            // Create a list of pets.
+            List<Pet> petsList =
+                new List<Pet>{ new Pet { Name="Barley", Age=8.3,Grade = "1"},
+                       new Pet { Name="Boots", Age=4.9,Grade = "1" },
+                       new Pet { Name="Whiskers", Age=1.5,Grade = "2" },
+                       new Pet { Name="Daisy", Age=4.3 ,Grade = "2"} };
+
+
+
+            var resultList = new List<Pet>();
+            foreach (var byGrade in petsList.GroupBy(x => x.Grade))
+            {
+
+                foreach (var byAge in byGrade.GroupBy(pet => Math.Floor(pet.Age)))
+                {
+                    var newPet = new Pet()
+                    {
+                        Grade = byGrade.Key,
+                        Age = byAge.Average(x => x.Age),
+                    };
+
+                }
+
+            }
+            // Group Pet.Age values by the Math.Floor of the age.
+            // Then project an anonymous type from each group
+            // that consists of the key, the count of the group's
+            // elements, and the minimum and maximum age in the group.
+            var query = petsList.GroupBy(
+                pet => Math.Floor(pet.Age),
+                pet => pet,
+                (baseAge, ages) => new
+                {
+                    Key = baseAge,
+
+                    Count = ages.Count(),
+                    Min = ages.Min(),
+                    Max = ages.Max()
+                });
+
+            // Iterate over each anonymous type.
+            foreach (var result in query)
+            {
+                Console.WriteLine("\nAge group: " + result.Key);
+                Console.WriteLine("Number of pets in this age group: " + result.Count);
+                Console.WriteLine("Minimum age: " + result.Min);
+                Console.WriteLine("Maximum age: " + result.Max);
+            }
+
+            /*  This code produces the following output:
+
+                Age group: 8
+                Number of pets in this age group: 1
+                Minimum age: 8.3
+                Maximum age: 8.3
+
+                Age group: 4
+                Number of pets in this age group: 2
+                Minimum age: 4.3
+                Maximum age: 4.9
+
+                Age group: 1
+                Number of pets in this age group: 1
+                Minimum age: 1.5
+                Maximum age: 1.5
+            */
+        }
+
         public class AnagramEqualityComparer : IEqualityComparer<string>
         {
             public bool Equals(string x, string y)
@@ -219,5 +289,34 @@ namespace LinqSamples
         }
     }
 
+    
+
+    public class Pet
+    {
+        public string Name { get; set; }
+        public double Age { get; set; }
+        public string Grade { get; set; }
+        public PetExtraAttributes Attributes { get; set; }
+
+        public Pet ShallowCopy()
+        {
+            return this.MemberwiseClone() as Pet;
+        }
+
+        public Pet DeepCopy()
+        {
+            var newPet = this.MemberwiseClone() as Pet;
+            var newAttr = new PetExtraAttributes();
+            newPet.Attributes = newAttr;
+
+            return newPet;
+        }
+    }
+
+    public class PetExtraAttributes
+    {
+        public string Color { get; set; }
+        public string Gender { get; set; }
+    }
 
 }
