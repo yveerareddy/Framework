@@ -1,32 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using Microsoft.Practices.Prism.PubSubEvents;
 
 namespace NotificationService
 {
-    public interface ISubscriptionService
-    {
-        Task SubscribeAsync<T,TResponse>(Topic topic,Func<T,Task<TResponse>> callbackAsync );
-        Task UnSubscribeAsync(Topic topic);
-    }
-    
-    public interface IPublishService
-    {
-        Task PublishAsync<T>(Topic topic, T payload) where T:Payload;
-    }
-
-    public class Payload
-    {
-    }
-
-    public class Topic
-    {
-    }
-
-
     public class AsyncPubSubEvent<TPayload> : EventBase
     {
 
@@ -112,30 +91,6 @@ namespace NotificationService
                 if (subscription != null)
                     _subscriptions.Remove(subscription);
             }
-        }
-    }
-
-    public enum AwaitOption
-    {
-        Synchronous,
-        Concurrent
-    }
-
-
-    public class AsyncEventSubscription<TPayload>
-    {
-        public Func<TPayload, Task> AsyncFunc { get; private set; }
-        public Func<TPayload, Task<bool>> Predicate { get; private set; }
-
-        public AsyncEventSubscription(Func<TPayload, Task> asyncFunc)
-        {
-            AsyncFunc = asyncFunc;
-        }
-
-        public AsyncEventSubscription(Func<TPayload, Task> asyncFunc, Func<TPayload, Task<bool>> predicate)
-        {
-            AsyncFunc = asyncFunc;
-            Predicate = predicate;
         }
     }
 }
