@@ -164,6 +164,7 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Guard.cs" />
     <Compile Include="IConfigService.cs" />
     <Compile Include="Themes\CalloutToolTip.cs" />
     <Compile Include="Constants.cs" />
@@ -184,6 +185,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <Compile Include="ThreadingService.cs" />
+    <Compile Include="WaitCursor.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

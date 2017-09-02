@@ -55,4 +55,6 @@ namespace WPFPresentationCore
         Task StartNewTask(Action action);
 
     }
+
+
 }
