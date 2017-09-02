@@ -1,0 +1,16 @@
+<ToolTip
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    x:Class="WPFPresentationCore.CalloutToolTip"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:WPFPresentationCore">
+    <ToolTip.Template>
+        <ControlTemplate TargetType="ToolTip">
+            <Grid Initialized="Grid_Initialized" MinWidth="100" MaxWidth="350">
+                <Polygon x:Name="toolTipShape" Initialized="toolTipShape_Initialized" SnapsToDevicePixels="True" Stretch="Uniform" >
+                </Polygon>
+                <TextBlock x:Name="toolTipText" Initialized="toolTipShape_Initialized" TextWrapping="WrapWithOverflow"
+                           HorizontalAlignment="Center" VerticalAlignment="Top" FontFamily="Segeo UI Semibold" FontSize="11"></TextBlock>
+            </Grid>
+        </ControlTemplate>
+    </ToolTip.Template>
+</ToolTip>

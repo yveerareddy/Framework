@@ -1,0 +1,584 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{CBCE58BE-156B-46E9-B474-93073C18A20B}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WPFSample</RootNamespace>
+    <AssemblyName>WPFSample</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <TargetFrameworkProfile />
+    <DontImportPostSharp>True</DontImportPostSharp>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Akavache, Version=4.0.3.2, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\WPFCore\packages\akavache.core.4.0.3.2\lib\net45\Akavache.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Akavache.Sqlite3, Version=4.0.3.2, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\WPFCore\packages\akavache.sqlite3.4.0.3.2\lib\Portable-Net45+Win8+WP8+Wpa81\Akavache.Sqlite3.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="BP.OWB.Caching, Version=1.43.0.8, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\WPFCore\packages\BP.OWB.Base.1.43.0.8\lib\net451\BP.OWB.Caching.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="BP.OWB.Dashboard, Version=1.43.0.8, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\WPFCore\packages\BP.OWB.Base.1.43.0.8\lib\net451\BP.OWB.Dashboard.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="BP.OWB.DataFabric.Model, Version=1.43.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\WPFCore\packages\BP.OWB.DataFabric.Model.1.43.0.34\lib\net40\BP.OWB.DataFabric.Model.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="BP.OWB.Deal, Version=1.43.0.8, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\WPFCore\packages\BP.OWB.Base.1.43.0.8\lib\net451\BP.OWB.Deal.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="BP.OWB.Deal.Ribbon, Version=1.43.0.8, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\WPFCore\packages\BP.OWB.Base.1.43.0.8\lib\net451\BP.OWB.Deal.Ribbon.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="BP.OWB.Desktop.Shared, Version=1.43.0.8, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\WPFCore\packages\BP.OWB.Base.1.43.0.8\lib\net451\BP.OWB.Desktop.Shared.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="BP.OWB.DocumentGeneration, Version=1.43.0.8, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\WPFCore\packages\BP.OWB.Base.1.43.0.8\lib\net451\BP.OWB.DocumentGeneration.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="BP.OWB.DocumentGeneration.Types, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\WPFCore\packages\BP.OWB.Base.1.43.0.8\lib\net451\BP.OWB.DocumentGeneration.Types.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="BP.OWB.EUBarges.PlanningApp, Version=1.43.0.8, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\WPFCore\packages\BP.OWB.Base.1.43.0.8\lib\net451\BP.OWB.EUBarges.PlanningApp.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="BP.OWB.EUBarges.PlanningApp.Grid, Version=1.43.0.8, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\WPFCore\packages\BP.OWB.Base.1.43.0.8\lib\net451\BP.OWB.EUBarges.PlanningApp.Grid.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="BP.OWB.Framework.Assets, Version=1.43.0.8, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\WPFCore\packages\BP.OWB.Base.1.43.0.8\lib\net451\BP.OWB.Framework.Assets.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="BP.OWB.Framework.Common, Version=1.43.0.8, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\WPFCore\packages\BP.OWB.Base.1.43.0.8\lib\net451\BP.OWB.Framework.Common.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="BP.OWB.Framework.CustomTheme, Version=1.43.0.8, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\WPFCore\packages\BP.OWB.Base.1.43.0.8\lib\net451\BP.OWB.Framework.CustomTheme.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="BP.OWB.Framework.Infrastructure, Version=1.43.0.8, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\WPFCore\packages\BP.OWB.Base.1.43.0.8\lib\net451\BP.OWB.Framework.Infrastructure.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="BP.OWB.Framework.ServiceLocator, Version=1.43.0.8, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\WPFCore\packages\BP.OWB.Base.1.43.0.8\lib\net451\BP.OWB.Framework.ServiceLocator.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="BP.OWB.Framework.SharedServices, Version=1.43.0.8, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\WPFCore\packages\BP.OWB.Base.1.43.0.8\lib\net451\BP.OWB.Framework.SharedServices.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="BP.OWB.Model.Entity, Version=1.43.0.8, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\WPFCore\packages\BP.OWB.Base.1.43.0.8\lib\net451\BP.OWB.Model.Entity.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="BP.OWB.Notification, Version=1.43.0.8, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\WPFCore\packages\BP.OWB.Base.1.43.0.8\lib\net451\BP.OWB.Notification.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Bp.OWB.OpenXmlUtilities, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\WPFCore\packages\BP.OWB.Base.1.43.0.8\lib\net451\Bp.OWB.OpenXmlUtilities.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="BP.OWB.OpsRefData, Version=1.43.0.8, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\WPFCore\packages\BP.OWB.Base.1.43.0.8\lib\net451\BP.OWB.OpsRefData.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="BP.OWB.Planner.Common, Version=1.43.0.8, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\WPFCore\packages\BP.OWB.Base.1.43.0.8\lib\net451\BP.OWB.Planner.Common.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="BP.OWB.Planner.Inventory, Version=1.43.0.8, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\WPFCore\packages\BP.OWB.Base.1.43.0.8\lib\net451\BP.OWB.Planner.Inventory.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="BP.OWB.Planner.ShipmentBuilder, Version=1.43.0.8, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\WPFCore\packages\BP.OWB.Base.1.43.0.8\lib\net451\BP.OWB.Planner.ShipmentBuilder.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="BP.OWB.ReferenceData, Version=1.43.0.8, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\WPFCore\packages\BP.OWB.Base.1.43.0.8\lib\net451\BP.OWB.ReferenceData.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="BP.OWB.Reporting, Version=1.43.0.8, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\WPFCore\packages\BP.OWB.Base.1.43.0.8\lib\net451\BP.OWB.Reporting.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="BP.OWB.Reports, Version=1.43.0.8, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\WPFCore\packages\BP.OWB.Base.1.43.0.8\lib\net451\BP.OWB.Reports.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="BP.OWB.Shipment, Version=1.43.0.8, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\WPFCore\packages\BP.OWB.Base.1.43.0.8\lib\net451\BP.OWB.Shipment.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="BP.OWB.Shipment.Ribbon, Version=1.43.0.8, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\WPFCore\packages\BP.OWB.Base.1.43.0.8\lib\net451\BP.OWB.Shipment.Ribbon.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="BP.OWB.TaskList, Version=1.43.0.8, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\WPFCore\packages\BP.OWB.Base.1.43.0.8\lib\net451\BP.OWB.TaskList.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="BP.OWB.TaskListSync, Version=1.43.0.8, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\WPFCore\packages\BP.OWB.Base.1.43.0.8\lib\net451\BP.OWB.TaskListSync.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CredentialManagement, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\WPFCore\packages\CredentialManagement.1.0.1\lib\net35\CredentialManagement.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Charts.v15.2.Core, Version=15.2.11.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <HintPath>..\..\WPFCore\packages\DevExpress.Charts.v15.2.Core.15.2.11.0\lib\net40\DevExpress.Charts.v15.2.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Data.v15.2, Version=15.2.11.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <HintPath>..\..\WPFCore\packages\DevExpress.Data.v15.2.15.2.11.0\lib\net40\DevExpress.Data.v15.2.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Mvvm.v15.2, Version=15.2.11.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <HintPath>..\..\WPFCore\packages\DevExpress.Mvvm.v15.2.15.2.11.0\lib\net40\DevExpress.Mvvm.v15.2.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Office.v15.2.Core, Version=15.2.11.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <HintPath>..\..\WPFCore\packages\DevExpress.Office.v15.2.Core.15.2.11.0\lib\net40\DevExpress.Office.v15.2.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Pdf.v15.2.Core, Version=15.2.11.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <HintPath>..\..\WPFCore\packages\DevExpress.Pdf.v15.2.Core.15.2.11.0\lib\net40\DevExpress.Pdf.v15.2.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Pdf.v15.2.Drawing, Version=15.2.11.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <HintPath>..\..\WPFCore\packages\DevExpress.Pdf.v15.2.Drawing.15.2.11.0\lib\net40\DevExpress.Pdf.v15.2.Drawing.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.PivotGrid.v15.2.Core, Version=15.2.11.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <HintPath>..\..\WPFCore\packages\DevExpress.PivotGrid.v15.2.Core.15.2.11.0\lib\net40\DevExpress.PivotGrid.v15.2.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Printing.v15.2.Core, Version=15.2.11.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <HintPath>..\..\WPFCore\packages\DevExpress.Printing.v15.2.Core.15.2.11.0\lib\net40\DevExpress.Printing.v15.2.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.RichEdit.v15.2.Core, Version=15.2.11.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <HintPath>..\..\WPFCore\packages\DevExpress.RichEdit.v15.2.Core.15.2.11.0\lib\net40\DevExpress.RichEdit.v15.2.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Sparkline.v15.2.Core, Version=15.2.11.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <HintPath>..\..\WPFCore\packages\DevExpress.Sparkline.v15.2.Core.15.2.11.0\lib\net40\DevExpress.Sparkline.v15.2.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Xpf.Core.v15.2, Version=15.2.11.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <HintPath>..\..\WPFCore\packages\DevExpress.Xpf.Core.v15.2.15.2.11.0\lib\net40\DevExpress.Xpf.Core.v15.2.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Xpf.Docking.v15.2, Version=15.2.11.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <HintPath>..\..\WPFCore\packages\DevExpress.Xpf.Docking.v15.2.15.2.11.0\lib\net40\DevExpress.Xpf.Docking.v15.2.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Xpf.DocumentViewer.v15.2.Core, Version=15.2.11.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <HintPath>..\..\WPFCore\packages\DevExpress.Xpf.DocumentViewer.v15.2.Core.15.2.11.0\lib\net40\DevExpress.Xpf.DocumentViewer.v15.2.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Xpf.Grid.v15.2, Version=15.2.11.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <HintPath>..\..\WPFCore\packages\DevExpress.Xpf.Grid.v15.2.15.2.11.0\lib\net40\DevExpress.Xpf.Grid.v15.2.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Xpf.Grid.v15.2.Core, Version=15.2.11.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <HintPath>..\..\WPFCore\packages\DevExpress.Xpf.Grid.v15.2.Core.15.2.11.0\lib\net40\DevExpress.Xpf.Grid.v15.2.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Xpf.Grid.v15.2.Extensions, Version=15.2.11.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <HintPath>..\..\WPFCore\packages\DevExpress.Xpf.Grid.v15.2.Extensions.15.2.11.0\lib\net40\DevExpress.Xpf.Grid.v15.2.Extensions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Xpf.Layout.v15.2.Core, Version=15.2.11.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <HintPath>..\..\WPFCore\packages\DevExpress.Xpf.Layout.v15.2.Core.15.2.11.0\lib\net40\DevExpress.Xpf.Layout.v15.2.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Xpf.Printing.v15.2, Version=15.2.11.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <HintPath>..\..\WPFCore\packages\DevExpress.Xpf.Printing.v15.2.15.2.11.0\lib\net40\DevExpress.Xpf.Printing.v15.2.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Xpf.Ribbon.v15.2, Version=15.2.11.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <HintPath>..\..\WPFCore\packages\DevExpress.Xpf.Ribbon.v15.2.15.2.11.0\lib\net40\DevExpress.Xpf.Ribbon.v15.2.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Xpf.Themes.OWBDarkTheme.v15.2, Version=15.2.11.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\WPFCore\packages\DevExpressOwbThemes.15.2.11.1\lib\net40\DevExpress.Xpf.Themes.OWBDarkTheme.v15.2.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Xpf.Themes.OWBLightTheme.v15.2, Version=15.2.11.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\WPFCore\packages\DevExpressOwbThemes.15.2.11.1\lib\net40\DevExpress.Xpf.Themes.OWBLightTheme.v15.2.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Xpf.Themes.OWBPinkTheme.v15.2, Version=15.2.11.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\WPFCore\packages\DevExpressOwbThemes.15.2.11.1\lib\net40\DevExpress.Xpf.Themes.OWBPinkTheme.v15.2.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraCharts.v15.2, Version=15.2.11.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <HintPath>..\..\WPFCore\packages\DevExpress.XtraCharts.v15.2.15.2.11.0\lib\net40\DevExpress.XtraCharts.v15.2.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraGauges.v15.2.Core, Version=15.2.11.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <HintPath>..\..\WPFCore\packages\DevExpress.XtraGauges.v15.2.Core.15.2.11.0\lib\net40\DevExpress.XtraGauges.v15.2.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraReports.v15.2, Version=15.2.11.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <HintPath>..\..\WPFCore\packages\DevExpress.XtraReports.v15.2.15.2.11.0\lib\net40\DevExpress.XtraReports.v15.2.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DocumentFormat.OpenXml, Version=2.5.5631.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\WPFCore\packages\DocumentFormat.OpenXml.2.5\lib\DocumentFormat.OpenXml.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="FluentValidation, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\WPFCore\packages\FluentValidation.4.0.0.0\lib\Net40\FluentValidation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="GalaSoft.MvvmLight.Extras.WPF4, Version=4.2.30.23173, Culture=neutral, PublicKeyToken=1673db7d5906b0ad, processorArchitecture=MSIL">
+      <HintPath>..\..\WPFCore\packages\MvvmLight.4.2.30.23173\lib\net40\GalaSoft.MvvmLight.Extras.WPF4.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="GalaSoft.MvvmLight.WPF4, Version=4.2.30.23173, Culture=neutral, PublicKeyToken=63eb5c012e0b3c1c, processorArchitecture=MSIL">
+      <HintPath>..\..\WPFCore\packages\MvvmLight.4.2.30.23173\lib\net40\GalaSoft.MvvmLight.WPF4.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Interop.Redemption, Version=5.8.0.0, Culture=neutral, PublicKeyToken=1c529bd2a9a7f489, processorArchitecture=MSIL">
+      <HintPath>..\..\WPFCore\packages\Outlook.Redemption.5.8.0.4041\lib\net40\Interop.Redemption.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="MahApps.Metro, Version=1.1.2.0, Culture=neutral, PublicKeyToken=f4fb5a3c4d1e5b4f, processorArchitecture=MSIL">
+      <HintPath>..\..\WPFCore\packages\MahApps.Metro.1.1.2.0\lib\net45\MahApps.Metro.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.DwayneNeed, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\WPFCore\packages\DwayneNeed.1.0.0.2\lib\Microsoft.DwayneNeed.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.DwayneNeed.Win32, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\WPFCore\packages\DwayneNeed.1.0.0.2\lib\Microsoft.DwayneNeed.Win32.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Caching, Version=5.0.505.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\WPFCore\packages\EnterpriseLibrary.Caching.5.0.505.0\lib\NET35\Microsoft.Practices.EnterpriseLibrary.Caching.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Common, Version=5.0.505.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\WPFCore\packages\EnterpriseLibrary.Common.5.0.505.0\lib\NET35\Microsoft.Practices.EnterpriseLibrary.Common.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.ExceptionHandling, Version=5.0.505.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\WPFCore\packages\EnterpriseLibrary.ExceptionHandling.5.0.505.0\lib\NET35\Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.Logging, Version=5.0.505.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\WPFCore\packages\EnterpriseLibrary.ExceptionHandling.Logging.5.0.505.0\lib\NET35\Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.Logging.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Logging, Version=5.0.505.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\WPFCore\packages\EnterpriseLibrary.Logging.5.0.505.1\lib\NET35\Microsoft.Practices.EnterpriseLibrary.Logging.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Validation, Version=5.0.505.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\WPFCore\packages\EnterpriseLibrary.Validation.5.0.505.0\lib\NET35\Microsoft.Practices.EnterpriseLibrary.Validation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Validation.Integration.WPF, Version=5.0.505.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\WPFCore\packages\EnterpriseLibrary.Validation.Integration.WPF.5.0.505.0\lib\NET35\Microsoft.Practices.EnterpriseLibrary.Validation.Integration.WPF.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Prism.Composition, Version=5.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\WPFCore\packages\Prism.Composition.5.0.0\lib\NET45\Microsoft.Practices.Prism.Composition.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Prism.Interactivity, Version=5.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\WPFCore\packages\Prism.Interactivity.5.0.0\lib\NET45\Microsoft.Practices.Prism.Interactivity.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Prism.MefExtensions, Version=5.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\WPFCore\packages\Prism.MEFExtensions.5.0.0\lib\NET45\Microsoft.Practices.Prism.MefExtensions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Prism.Mvvm, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\WPFCore\packages\Prism.Mvvm.1.0.0\lib\net45\Microsoft.Practices.Prism.Mvvm.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Prism.Mvvm.Desktop, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\WPFCore\packages\Prism.Mvvm.1.0.0\lib\net45\Microsoft.Practices.Prism.Mvvm.Desktop.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Prism.PubSubEvents, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\WPFCore\packages\Prism.PubSubEvents.1.0.0\lib\portable-sl4+wp7+windows8+net40\Microsoft.Practices.Prism.PubSubEvents.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Prism.SharedInterfaces, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\WPFCore\packages\Prism.Mvvm.1.0.0\lib\net45\Microsoft.Practices.Prism.SharedInterfaces.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\WPFCore\packages\CommonServiceLocator.1.2\lib\portable-windows8+net40+sl5+windowsphone8\Microsoft.Practices.ServiceLocation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity, Version=2.1.505.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\WPFCore\packages\Unity.2.1.505.2\lib\NET35\Microsoft.Practices.Unity.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Configuration, Version=2.1.505.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\WPFCore\packages\Unity.2.1.505.2\lib\NET35\Microsoft.Practices.Unity.Configuration.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Interception, Version=2.1.505.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\WPFCore\packages\Unity.Interception.2.1.505.2\lib\NET35\Microsoft.Practices.Unity.Interception.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Interception.Configuration, Version=2.1.505.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\WPFCore\packages\Unity.Interception.2.1.505.2\lib\NET35\Microsoft.Practices.Unity.Interception.Configuration.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\WPFCore\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PostSharp, Version=4.3.23.0, Culture=neutral, PublicKeyToken=b13fd38b8f9c99d7, processorArchitecture=MSIL">
+      <HintPath>..\..\WPFCore\packages\PostSharp.4.3.23\lib\net35-client\PostSharp.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="protobuf-net, Version=2.0.0.668, Culture=neutral, PublicKeyToken=257b51d87d2e4d67, processorArchitecture=MSIL">
+      <HintPath>..\..\WPFCore\packages\protobuf-net.2.0.0.668\lib\net40\protobuf-net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Splat, Version=1.3.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\WPFCore\packages\Splat.1.3.3\lib\Net45\Splat.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Reactive.Core, Version=2.2.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\WPFCore\packages\Rx-Core.2.2.5\lib\net45\System.Reactive.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Reactive.Interfaces, Version=2.2.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\WPFCore\packages\Rx-Interfaces.2.2.5\lib\net45\System.Reactive.Interfaces.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Reactive.Linq, Version=2.2.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\WPFCore\packages\Rx-Linq.2.2.5\lib\net45\System.Reactive.Linq.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Reactive.PlatformServices, Version=2.2.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\WPFCore\packages\Rx-PlatformServices.2.2.5\lib\net45\System.Reactive.PlatformServices.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Reactive.Windows.Threading, Version=2.2.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\WPFCore\packages\Rx-Xaml.2.2.5\lib\net45\System.Reactive.Windows.Threading.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Windows.Controls.DataVisualization.Toolkit, Version=3.5.40128.1, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\WPFCore\packages\WPFToolkit.DataVisualization.3.5.50211.1\lib\System.Windows.Controls.DataVisualization.Toolkit.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Windows.Controls.Input.Toolkit, Version=3.5.40128.1, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\WPFCore\packages\WPFToolkit.3.5.50211.1\lib\System.Windows.Controls.Input.Toolkit.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Windows.Controls.Layout.Toolkit, Version=3.5.40128.1, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\WPFCore\packages\WPFToolkit.3.5.50211.1\lib\System.Windows.Controls.Layout.Toolkit.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\WPFCore\packages\MahApps.Metro.1.1.2.0\lib\net45\System.Windows.Interactivity.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls, Version=2013.3.1204.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <HintPath>..\..\WPFCore\packages\Telerik.2013.3.1204.40\lib\net40\Telerik.Windows.Controls.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.Data, Version=2013.3.1204.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <HintPath>..\..\WPFCore\packages\Telerik.2013.3.1204.40\lib\net40\Telerik.Windows.Controls.Data.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.Docking, Version=2013.3.1204.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <HintPath>..\..\WPFCore\packages\Telerik.2013.3.1204.40\lib\net40\Telerik.Windows.Controls.Docking.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.GridView, Version=2013.3.1204.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <HintPath>..\..\WPFCore\packages\Telerik.2013.3.1204.40\lib\net40\Telerik.Windows.Controls.GridView.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.Input, Version=2013.3.1204.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <HintPath>..\..\WPFCore\packages\Telerik.2013.3.1204.40\lib\net40\Telerik.Windows.Controls.Input.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.Navigation, Version=2013.3.1204.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <HintPath>..\..\WPFCore\packages\Telerik.2013.3.1204.40\lib\net40\Telerik.Windows.Controls.Navigation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.RibbonView, Version=2013.3.1204.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <HintPath>..\..\WPFCore\packages\Telerik.2013.3.1204.40\lib\net40\Telerik.Windows.Controls.RibbonView.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.Windows.Data, Version=2013.3.1204.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <HintPath>..\..\WPFCore\packages\Telerik.2013.3.1204.40\lib\net40\Telerik.Windows.Data.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.Windows.PersistenceFramework, Version=2013.3.1204.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <HintPath>..\..\WPFCore\packages\Telerik.2013.3.1204.40\lib\net40\Telerik.Windows.PersistenceFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="WPFToolkit, Version=3.5.40128.1, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\WPFCore\packages\WPFToolkit.3.5.50211.1\lib\WPFToolkit.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Page Include="CalloutTooltip.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ImageButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="InformationButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="AkavacheSqliteLinkerOverride.cs" />
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CalloutTooltip.xaml.cs">
+      <DependentUpon>CalloutTooltip.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ImageButton.xaml.cs">
+      <DependentUpon>ImageButton.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="InformationButton.xaml.cs">
+      <DependentUpon>InformationButton.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="NotNullConverter.cs" />
+    <Compile Include="Properties\Annotations.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Redemption.dll" />
+    <Content Include="TaskListSync.exe" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\..\WPFCore\packages\PostSharp.4.3.23\tools\PostSharp.targets" Condition="Exists('..\..\WPFCore\packages\PostSharp.4.3.23\tools\PostSharp.targets')" />
+  <Target Name="EnsurePostSharpImported" BeforeTargets="BeforeBuild" Condition="'$(PostSharp30Imported)' == ''">
+    <Error Condition="!Exists('..\..\WPFCore\packages\PostSharp.4.3.23\tools\PostSharp.targets')" Text="This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://www.postsharp.net/links/nuget-restore." />
+    <Error Condition="Exists('..\..\WPFCore\packages\PostSharp.4.3.23\tools\PostSharp.targets')" Text="The build restored NuGet packages. Build the project again to include these packages in the build. For more information, see http://www.postsharp.net/links/nuget-restore." />
+  </Target>
+  <Import Project="..\..\WPFCore\packages\SQLitePCL.raw_basic.0.5.0\build\net45\SQLitePCL.raw_basic.targets" Condition="Exists('..\..\WPFCore\packages\SQLitePCL.raw_basic.0.5.0\build\net45\SQLitePCL.raw_basic.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\..\WPFCore\packages\SQLitePCL.raw_basic.0.5.0\build\net45\SQLitePCL.raw_basic.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\WPFCore\packages\SQLitePCL.raw_basic.0.5.0\build\net45\SQLitePCL.raw_basic.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
