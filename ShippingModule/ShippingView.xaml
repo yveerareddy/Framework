@@ -6,6 +6,6 @@
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
     <Grid>
-        <TextBlock  FontSize="100" FontStyle="Italic" Foreground="Blue" Text="{Binding Title}"> </TextBlock>
+        <TextBlock  FontSize="100" FontStyle="Italic" Foreground="White" Text="{Binding Title}"> </TextBlock>
     </Grid>
 </UserControl>

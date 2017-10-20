@@ -9,27 +9,19 @@ namespace ShippingModule
     [ModuleExport(typeof(ShippingModule))]
     public class ShippingModule:IModule
     {
-
-        [Import]
         private INavigationService _navigationService;
-
-        [Import]
-        private IShippingView _shipmentView;
-
-        [Import]
-        private IParcelView _parcelView;
-
         public void Initialize()
         {
-            //_navigationService.ActivateViewInRegion(Constants.ShipmentsRegion, _shipmentView, Constants.ShipmentView);
-            //_navigationService.ActivateViewInRegion(Constants.ParcelRegion, _parcelView, Constants.ParcelView);
+            _navigationService.ActivateViewInRegion(Constants.ShipmentsRegion, MefContainer.Instance.Resolve<IShippingView>(), Constants.ShipmentView);
+            _navigationService.ActivateViewInRegion(Constants.ParcelRegion, MefContainer.Instance.Resolve<IParcelView>(), Constants.ParcelView);
 
         }
 
         [ImportingConstructor]
-        public ShippingModule(IRegionManager regionManager, IShippingView shipmentview,IParcelView parcelView)
+        public ShippingModule(INavigationService navigationService)
         {
-
+            _navigationService = navigationService;
         }
+
     }
 }

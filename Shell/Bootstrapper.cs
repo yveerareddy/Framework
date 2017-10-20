@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.Composition.Hosting;
+﻿using System.ComponentModel.Composition;
+using System.ComponentModel.Composition.Hosting;
 using System.IO;
 using System.Reflection;
 using System.Windows;
@@ -12,6 +13,7 @@ namespace Presentation.Shell
     public class Bootstrapper:MefBootstrapper
     {
         private readonly IThreadingService _threadingService;
+        private IRegionManager _regionManager;
 
         public Bootstrapper()
         {
@@ -20,12 +22,13 @@ namespace Presentation.Shell
 
         protected override DependencyObject CreateShell()
         {
-            Application.Current.MainWindow = Container.GetExportedValueOrDefault<Shell>();
+            var regionManager = Container.GetExportedValue<IRegionManager>();
+            var shell= new Shell(_regionManager);
+            Application.Current.MainWindow = shell;
             Application.Current.MainWindow.Show();
             Application.Current.MainWindow.Activate();
             RegionManager.UpdateRegions();
-
-            return Container.GetExportedValueOrDefault<Shell>();
+            return shell;
         }
 
         protected override void InitializeShell()
@@ -38,6 +41,7 @@ namespace Presentation.Shell
         {
             base.ConfigureContainer();
             MefContainer.Instance.ConfigureContainer(this.Container);
+            Container.ComposeExportedValue<IThreadingService>(_threadingService);
         }
 
         protected override void ConfigureAggregateCatalog()

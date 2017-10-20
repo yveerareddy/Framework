@@ -33,82 +33,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="DevExpress.Data.v15.2, Version=15.2.11.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <HintPath>..\packages\DevExpress.Data.v15.2.15.2.11.0\lib\net40\DevExpress.Data.v15.2.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="DevExpress.Mvvm.v15.2, Version=15.2.11.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <HintPath>..\packages\DevExpress.Mvvm.v15.2.15.2.11.0\lib\net40\DevExpress.Mvvm.v15.2.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="DevExpress.Office.v15.2.Core, Version=15.2.11.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <HintPath>..\packages\DevExpress.Office.v15.2.Core.15.2.11.0\lib\net40\DevExpress.Office.v15.2.Core.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="DevExpress.Pdf.v15.2.Core, Version=15.2.11.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <HintPath>..\packages\DevExpress.Pdf.v15.2.Core.15.2.11.0\lib\net40\DevExpress.Pdf.v15.2.Core.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="DevExpress.Pdf.v15.2.Drawing, Version=15.2.11.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <HintPath>..\packages\DevExpress.Pdf.v15.2.Drawing.15.2.11.0\lib\net40\DevExpress.Pdf.v15.2.Drawing.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="DevExpress.Printing.v15.2.Core, Version=15.2.11.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <HintPath>..\packages\DevExpress.Printing.v15.2.Core.15.2.11.0\lib\net40\DevExpress.Printing.v15.2.Core.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="DevExpress.RichEdit.v15.2.Core, Version=15.2.11.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <HintPath>..\packages\DevExpress.RichEdit.v15.2.Core.15.2.11.0\lib\net40\DevExpress.RichEdit.v15.2.Core.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="DevExpress.Xpf.Controls.v15.2, Version=15.2.11.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <HintPath>..\packages\DevExpress.Xpf.Controls.v15.2.15.2.11.0\lib\net40\DevExpress.Xpf.Controls.v15.2.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="DevExpress.Xpf.Core.v15.2, Version=15.2.11.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <HintPath>..\packages\DevExpress.Xpf.Core.v15.2.15.2.11.0\lib\net40\DevExpress.Xpf.Core.v15.2.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="DevExpress.Xpf.Docking.v15.2, Version=15.2.11.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <HintPath>..\packages\DevExpress.Xpf.Docking.v15.2.15.2.11.0\lib\net40\DevExpress.Xpf.Docking.v15.2.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="DevExpress.Xpf.DocumentViewer.v15.2.Core, Version=15.2.11.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <HintPath>..\packages\DevExpress.Xpf.DocumentViewer.v15.2.Core.15.2.11.0\lib\net40\DevExpress.Xpf.DocumentViewer.v15.2.Core.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="DevExpress.Xpf.Grid.v15.2, Version=15.2.11.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <HintPath>..\packages\DevExpress.Xpf.Grid.v15.2.15.2.11.0\lib\net40\DevExpress.Xpf.Grid.v15.2.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="DevExpress.Xpf.Grid.v15.2.Core, Version=15.2.11.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <HintPath>..\packages\DevExpress.Xpf.Grid.v15.2.Core.15.2.11.0\lib\net40\DevExpress.Xpf.Grid.v15.2.Core.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="DevExpress.Xpf.Layout.v15.2.Core, Version=15.2.11.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <HintPath>..\packages\DevExpress.Xpf.Layout.v15.2.Core.15.2.11.0\lib\net40\DevExpress.Xpf.Layout.v15.2.Core.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="DevExpress.Xpf.Printing.v15.2, Version=15.2.11.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <HintPath>..\packages\DevExpress.Xpf.Printing.v15.2.15.2.11.0\lib\net40\DevExpress.Xpf.Printing.v15.2.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="DevExpress.Xpf.Ribbon.v15.2, Version=15.2.11.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <HintPath>..\packages\DevExpress.Xpf.Ribbon.v15.2.15.2.11.0\lib\net40\DevExpress.Xpf.Ribbon.v15.2.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="DevExpress.Xpf.Themes.OWBDarkTheme.v15.2, Version=15.2.11.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\DevExpressOwbThemes.15.2.11.1\lib\net40\DevExpress.Xpf.Themes.OWBDarkTheme.v15.2.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="DevExpress.Xpf.Themes.OWBLightTheme.v15.2, Version=15.2.11.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\DevExpressOwbThemes.15.2.11.1\lib\net40\DevExpress.Xpf.Themes.OWBLightTheme.v15.2.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="DevExpress.Xpf.Themes.OWBPinkTheme.v15.2, Version=15.2.11.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\DevExpressOwbThemes.15.2.11.1\lib\net40\DevExpress.Xpf.Themes.OWBPinkTheme.v15.2.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="Microsoft.Practices.ServiceLocation">
       <HintPath>..\packages\CommonServiceLocator.1.3\lib\portable-net4+sl5+netcore45+wpa81+wp8\Microsoft.Practices.ServiceLocation.dll</HintPath>
     </Reference>
@@ -161,7 +85,6 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CustomCheckEdit.xaml.cs" />
     <Compile Include="InvenotryModule.cs" />
     <Compile Include="InventoryService.cs" />
     <Compile Include="InventoryView.xaml.cs">
@@ -175,10 +98,6 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Page Include="CustomCheckEdit.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
     <Page Include="InventoryView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
